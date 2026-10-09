@@ -135,7 +135,7 @@ jobs:
       - name: Setup RSDKv5 & mods symlinks
         run: |
           rm Game
-          rmdir $PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5
+          rmdir "$PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5" 2>/dev/null || true
           ln -s $PWD $PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5
           ln -s $PWD/RSDKv5-GameAPI RSDKv5-Example-Mods/ManiaTouchControls/GameAPI
           ln -s $PWD/RSDKv5-GameAPI RSDKv5-Example-Mods/UltrawideMania/GameAPI
