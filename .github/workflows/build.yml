@@ -111,7 +111,7 @@ jobs:
       - name: Checkout Sonic Mania
         uses: actions/checkout@v4
         with:
-          repository: "RSDKModding/Sonic-Mania-Decompilation"
+          repository: "KiaraGale/Sonic-Mania-Decomp-Extra-Slot-Amy"
           path: "Sonic-Mania-Decompilation"
       - name: Checkout Example-Mods
         uses: actions/checkout@v4
