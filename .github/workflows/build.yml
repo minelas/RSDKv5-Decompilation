@@ -113,6 +113,7 @@ jobs:
         with:
           repository: "KiaraGale/Sonic-Mania-Decomp-Extra-Slot-Amy"
           path: "Sonic-Mania-Decompilation"
+          submodules: recursive
       - name: Checkout Example-Mods
         uses: actions/checkout@v4
         with:
@@ -135,9 +136,9 @@ jobs:
       - name: Setup RSDKv5 & mods symlinks
         run: |
           rm Game
-          rmdir "$PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5" 2>/dev/null || true
-          ln -s $PWD $PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5
-          ln -s $PWD/RSDKv5-GameAPI RSDKv5-Example-Mods/ManiaTouchControls/GameAPI
+          mkdir -p "$PWD/Sonic-Mania-Decompilation/dependencies"
+          rm -rf "$PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5"
+          ln -s "$PWD" "$PWD/Sonic-Mania-Decompilation/dependencies/RSDKv5"
           ln -s $PWD/RSDKv5-GameAPI RSDKv5-Example-Mods/UltrawideMania/GameAPI
           ln -s $PWD/Sonic-Mania-Decompilation ./android/app/jni/Game
           ln -s $PWD/RSDKv5-Example-Mods/ManiaTouchControls ./android/app/jni/MTC
